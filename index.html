@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dimas ToDo Liste</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+
+    <header class="app__header">
+      <button class="btn--toggle-all" id="toggleAll" aria-label="Alle umschalten" title="Alle umschalten">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </button>
+      <h1 class="app__title">Dimas ToDo Liste</h1>
+    </header>
+
+    <section class="app__input-row">
+      <input
+        type="text"
+        id="newTodoInput"
+        class="input--new-todo"
+        placeholder="Was muss erledigt werden?"
+        autocomplete="off"
+        autofocus
+      />
+      <input type="text" id="newTodoAssignee" class="input--new-assignee" placeholder="Wer?" autocomplete="off" maxlength="40" title="Zuständige Person" />
+      <input type="date" id="newTodoDue" class="input--new-due" title="Fälligkeitsdatum" />
+    </section>
+
+    <ul class="todo-list" id="todoList" role="list" aria-label="Aufgabenliste"></ul>
+
+    <footer class="app__footer" id="appFooter">
+      <span class="footer__count" id="itemCount">0 Aufgaben übrig</span>
+
+      <nav class="footer__filters" role="tablist" aria-label="Aufgaben filtern">
+        <button class="filter-btn filter-btn--active" data-filter="all" role="tab" aria-selected="true">Alle</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Aktiv</button>
+        <button class="filter-btn" data-filter="done" role="tab" aria-selected="false">Erledigt</button>
+      </nav>
+
+      <button class="btn--clear-completed" id="clearCompleted">Erledigte löschen</button>
+    </footer>
+
+  </main>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
